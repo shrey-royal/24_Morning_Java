@@ -5,23 +5,24 @@ public class ScanData {
         // for (String i : args) {
         //     System.out.println(i);
         // }
+		// System.out.println("\nLength: " + args.length);
 
         Scanner sc = new Scanner(System.in);
 		
 		// System.out.print("next method input (one-word): ");
         // String next = sc.next();
         // System.out.println("next(one-word): " + next);
-
+		
         // to clear the buffer
         // sc.nextLine();
         // System.out.print("nextLine method input (multiple words): ");
         // String nextLine = sc.nextLine();
         // System.out.println("nextLine (string): " + nextLine);
-
+		
         System.out.print("Character method input: ");
         char nextChar = sc.next().charAt(0);
         System.out.println("next().charAt(0): " + nextChar);
-
+		
         System.out.print("Integer method input: ");
         int nextInt = sc.nextInt();
         System.out.println("nextInt(): " + nextInt);
@@ -37,14 +38,12 @@ public class ScanData {
         System.out.print("Boolean method input: ");
         boolean nextBoolean = sc.nextBoolean();
         System.out.println("nextBoolean(): " + nextBoolean);
-
+		
         System.out.print("Byte method input: ");
         byte nextByte = sc.nextByte();
         System.out.println("nextByte(): " + nextByte);
 
         sc.close(); //to prevent resource leak
-		
-		
     }
 }
 
@@ -59,7 +58,7 @@ Methods used in Scanner class:
 4. nextFloat(): used to scan float data from the user
 5. nextDouble(): used to scan double data from the user
 6. nextBoolean(): used to scan boolean data from the user
-7. nextByte(): used to scan byte data from the user
+7. nextByte(): used to scan byte data from the user (ascii values -> -128 to 127)
 
 Creating Object of Scanner Class:
 
