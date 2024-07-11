@@ -1,0 +1,53 @@
+EveGen_Java\Arrays>type ArrayMethods_1.java
+The system cannot find the file specified.
+
+EveGen_Java\Arrays>type NUL > ArrayMethods_1.java
+
+EveGen_Java\Arrays>type "This is text file" > ArrayMethods_2.java
+The system cannot find the file specified.
+
+EveGen_Java\Arrays>del ArrayMethods_2.java
+
+EveGen_Java\Arrays>echo "This is text file" > ArrayMethods_2.java
+
+EveGen_Java\Arrays>del ArrayMethods_2.java
+
+EveGen_Java\Arrays>mkdir himesh_bro/dhulo/meet.txt
+The syntax of the command is incorrect.
+
+EveGen_Java\Arrays>mkdir himesh_bro/dhulo/meet
+The syntax of the command is incorrect.
+
+EveGen_Java\Arrays>mkdir himesh_bro\dhulo\meet
+
+EveGen_Java\Arrays>rmdir himesh_bro\dhulo\meet
+
+EveGen_Java\Arrays>rmdir himesh_bro
+The directory is not empty.
+
+EveGen_Java\Arrays>rmdir -f himesh_bro
+The system cannot find the file specified.
+The directory is not empty.
+
+EveGen_Java\Arrays>rmdir
+The syntax of the command is incorrect.
+
+EveGen_Java\Arrays>rmdir --help
+The system cannot find the file specified.
+
+EveGen_Java\Arrays>rmdir -h
+The system cannot find the file specified.
+
+EveGen_Java\Arrays>rmdir
+The syntax of the command is incorrect.
+
+EveGen_Java\Arrays>rmdir /f himesh_bro
+Invalid switch - "f".
+
+EveGen_Java\Arrays>rmdir \f himesh_bro
+The system cannot find the file specified.
+The directory is not empty.
+
+EveGen_Java\Arrays>rmdir /s /q himesh_bro
+
+EveGen_Java\Arrays>cd .. && type NUL > notepad_commands.txt
