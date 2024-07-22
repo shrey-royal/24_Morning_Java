@@ -1,0 +1,31 @@
+Here are 10 problem statements using constructors in Java:
+
+1. Basic Constructor Initialization:
+   Create a 'Person' class with fields for 'name' and 'age'. Implement a default constructor that sets these fields to default values and a parameterized constructor that initializes these fields with given values. Display the person's details using a method.
+
+2. Overloading Constructors:
+   Design a 'Book' class with fields for 'title', 'author', and 'price'. Implement multiple constructors: one default, one that takes only 'title' and 'author', and another that takes all three fields. Write a method to display book details.
+
+3. Constructor Chaining:
+   Implement a 'Rectangle' class with fields for 'length' and 'width'. Provide a default constructor that initializes these to 1, another constructor that takes only 'length' (and sets 'width' to a default value), and a constructor that takes both 'length' and 'width'. Use constructor chaining to avoid code duplication.
+
+4. Copy Constructor:
+   Create a 'Student' class with fields 'name', 'rollNumber', and 'grade'. Implement a copy constructor that initializes a new object as a copy of an existing 'Student' object. Also, provide a method to display the student's details.
+
+5. Constructor with Validation:
+   Write a 'BankAccount' class with fields for 'accountNumber' and 'balance'. The constructor should validate that the 'balance' is not negative. If it is, set the balance to 0 and print a warning message.
+
+6. Static Factory Method:
+   Create a 'Time' class with fields 'hour' and 'minute'. Implement a private constructor and a static factory method 'of' that takes 'hour' and 'minute' as parameters and returns a new 'Time' object. The factory method should validate that the 'hour' is between 0 and 23 and the 'minute' is between 0 and 59.
+
+   7. Parameterized Constructor with Default Values:
+      Design a 'Laptop' class with fields 'brand', 'model', and 'price'. Implement a constructor that takes 'brand' and 'model' as parameters and sets a default price. Also, implement another constructor that initializes all three fields.
+
+   8. Inheritance and Constructors:
+      Create a 'Vehicle' class with fields 'make' and 'year'. Provide a default constructor and a parameterized constructor. Then, create a 'Car' class that inherits from 'Vehicle' and adds a 'model' field. Implement constructors in the 'Car' class that call the appropriate constructors in the 'Vehicle' class.
+
+   9. Array of Objects Initialization:
+      Develop a 'Movie' class with fields 'title', 'director', and 'releaseYear'. Write a main class where you create an array of 'Movie' objects, initializing each element of the array using a constructor, and then display their details.
+
+   10. Mutability and Immutability:
+      Create an immutable 'Point' class with fields 'x' and 'y'. Implement a constructor to initialize these fields and do not provide any setter methods. Ensure that the fields are private and final, and write methods to get the values of 'x' and 'y'.

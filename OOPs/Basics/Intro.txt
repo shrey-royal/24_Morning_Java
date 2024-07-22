@@ -1,0 +1,9 @@
+OOPs: Object Oriented Programming System
+
+> It includes concepts like classes, objects, polymorphism, abstraction, encapsulation, inheritance etc.
+
+1. Objects and Classes -> Basics of OOP
+2. Inheritance -> Code Reusability
+3. Polymorphism -> Code Reuseability and Flexibility
+4. Abstraction -> Security -> Data Hiding
+5. Encapsulation -> Data Wrapping / Data Binding
