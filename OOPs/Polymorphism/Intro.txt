@@ -1,0 +1,18 @@
+Polymorphism: The ability to use same thing in many ways.
+
+Poly means Many and Morph means Forms. So, Polymorphism means many forms.
+
+inheritance: use same method but can't create new method in child class.
+polymorphism: use the method and even modify/change that method based on the needs of the child class.
+
+Concepts of Polymorphism:
+
+1. Method Overloading
+2. Method Overriding
+3. Covariant Return Type (same method but different return type)
+4. super keyword
+5. Instance Initializer Block
+6. Final keyword (const)
+7. Runtime Polymorphism
+8. Dynamic Binding
+9. instanceof Operator
