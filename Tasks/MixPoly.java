@@ -95,6 +95,14 @@ class Customer {
         System.out.print("Favourite Cuisine: ");
         favouriteCuisine.displayDetails();
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setFavouriteCuisine(Cuisine favouriteCuisine) {
+        this.favouriteCuisine = favouriteCuisine;
+    }
 }
 
 class RestaurantManager {
@@ -103,6 +111,9 @@ class RestaurantManager {
     private int cuisineCount = 0;
     private int customerCount = 0;
 
+    /**
+     * @param cuisine
+     */
     public void addCuisine(Cuisine cuisine) {
         if(cuisineCount >= cuisines.length) {
             System.out.println("Can't add more cuisines as the array is full!");
@@ -111,6 +122,9 @@ class RestaurantManager {
         cuisines[cuisineCount++] = cuisine;
     }
 
+    /**
+     * @param index
+     */
     public void viewCuisine(int index) {
         if(index >= 0 && index < cuisineCount) {
             cuisines[index].displayDetails();
@@ -119,15 +133,23 @@ class RestaurantManager {
         }
     }
 
-    public void updateCuisine(int index, String name, String description) {
+    /**
+     * @param index
+     * @param newName
+     * @param newDescription
+     */
+    public void updateCuisine(int index, String newName, String newDescription) {
         if(index >= 0 && index < cuisineCount) {
-            cuisines[index].setName(name);
-            cuisines[index].setDescription(description);
+            cuisines[index].setName(newName);
+            cuisines[index].setDescription(newDescription);
         } else {
             System.out.println("Cuisine not found!");
         }
     }
 
+    /**
+     * @param index
+     */
     public void removeCuisine(int index) {
         if(index >= 0 && index < cuisineCount) {
             for (int i = index; i < cuisineCount-1; i++) {
@@ -136,6 +158,68 @@ class RestaurantManager {
             cuisines[--cuisineCount] = null;
         } else {
             System.out.println("Cuisine not found!");
+        }
+    }
+
+    /**
+     * @param customer
+     */
+    public void addCustomer(Customer customer) {
+        if(customerCount < customers.length) {
+            customers[customerCount++] = customer;
+        } else {
+            System.out.println("Customer array is full.");
+        }
+    }
+
+    /**
+     * @param index
+     */
+    public void viewCustomer(int index) {
+        if(index >= 0 && index < customerCount) {
+            customers[index].displayDetails();
+        } else {
+            System.out.println("Customer not found!");
+        }
+    }
+
+    // single line comment
+    
+    /* 
+     * multi
+     * line
+     * comment
+    */
+
+    /**
+     * javadoc comment
+     */
+
+    /**
+     * @param index
+     * @param newName
+     * @param newFavouriteCuisine
+     */
+    public void updateCustomer(int index, String newName, Cuisine newFavouriteCuisine) {
+        if(index >= 0 && index < cuisineCount) {
+            customers[index].setName(newName); 
+            customers[index].setFavouriteCuisine(newFavouriteCuisine);
+        } else {
+            System.out.println("Customer not found!");
+        }
+    }
+
+    /**
+     * @param index
+     */
+    public void removeCustomer(int index) {
+        if(index >= 0 && index < customerCount) {
+            for (int i = index; i < customerCount-1; i++) {
+                customers[i] = customers[i+1];
+            }
+            customers[--customerCount] = null;
+        } else {
+            System.out.println("Customer not found!");
         }
     }
 }
@@ -152,8 +236,8 @@ public class MixPoly {
         management.addCuisine(chinese);
         management.addCuisine(mexican);
 
-        // Customer arin = new Customer("Arin", italian);
-        // Customer marmik = new Customer("Marmik", chinese);
+        Customer arin = new Customer("Arin", italian);
+        Customer marmik = new Customer("Marmik", chinese);
 
         // arin.displayDetails();
         // marmik.displayDetails();
