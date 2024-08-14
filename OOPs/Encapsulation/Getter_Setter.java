@@ -1,6 +1,74 @@
+class Product {
+    private String name;
+    private double price;
+    private int stockQuantity;
+    private final String shopName = "Lala Parmanand and Sons";
+    
+    public Product() {}
+
+    public Product(String name, double price, int stockQuantity) {
+        this.name = name;
+        this.price = price;
+        this.stockQuantity = stockQuantity;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        if(price >= 0) {
+            this.price = price;
+        } else {
+            System.out.println("Price can't be negative.");
+        }
+    }
+
+    public int getStockQuantity() {
+        return stockQuantity;
+    }
+
+    public void setStockQuantity(int stockQuantity) {
+        if(stockQuantity >= 0) {
+            this.stockQuantity = stockQuantity;
+        } else {
+            System.out.println("stockQuantity can't be negative.");
+        }
+    }
+
+    public String getShopName() {
+        return shopName;
+    }
+}
+
+
 public class Getter_Setter {
     public static void main(String[] args) {
-        //tomorrow
+        Product product = new Product("Laptop", 200000, 50);
+
+        System.out.println("\nShopName: " + product.getShopName());
+
+        System.out.println("\nProduct Name: " + product.getName());
+        System.out.println("Price: Rs." + product.getPrice());
+        System.out.println("Stock Quantity: " + product.getStockQuantity());
+
+        product.setName("Dell Alienware");
+        product.setPrice(300000);
+        product.setStockQuantity(60);
+
+        System.out.println("\nProduct Name: " + product.getName());
+        System.out.println("Price: Rs." + product.getPrice());
+        System.out.println("Stock Quantity: " + product.getStockQuantity());
+        
+
     }
 }
 /*
