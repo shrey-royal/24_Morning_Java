@@ -19,3 +19,21 @@ Life Cycle of a Thread: (Thread States)
 3. Blocked/Waiting : Whenever a thread is inactive for a span of time(not permanently).
 4. Timed Waiting : Whenever a thread is inactive for a speicific span of time.
 5. Terminated : Whenever a thread has finished the execution or any unhandled exception occurs or the thread gets killed forcefully.
+
+
+Thread Scheduler:
+
+component -> decides which thread should execute itself
+
+a thread only gets chosen by it if it's in runnable state.
+
+1. priority and 2. time of arrival
+
+3 algorithms/methods:
+
+1. first come first serve Scheduling
+2. Time Slicing Scheduling
+3. Preemptive-Priority Scheduling
+
+
+sleep()
