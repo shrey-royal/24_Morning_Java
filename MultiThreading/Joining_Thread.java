@@ -27,7 +27,17 @@ public class Joining_Thread {
         MyThread t3 = new MyThread("Three");
 
         t1.start();
+        try {
+            t1.join(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         t2.start();
+        try {
+            t2.join(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         t3.start();
     }
 }
