@@ -1,0 +1,17 @@
+Synchronization in Java: it's the capability to control the access of multiple threads to any shared resources.
+
+Why?
+1. to prevent thread interference
+2. to prevent consistency problem
+
+Types of Synchronization: 
+1. Process Synchronization
+2. Thread Synchronization
+
+Thread Synchronization types: 
+1. Mutual exclusive:
+    > synchronized block
+    > synchronized method
+    > static synchronization
+
+2. Cooperation (inter-thread communication)
