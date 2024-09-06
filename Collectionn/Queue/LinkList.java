@@ -1,9 +1,41 @@
+import java.util.Deque;
 import java.util.LinkedList;
 
 public class LinkList {
     public static void main(String[] args) {
-        LinkedList<Integer> n = new LinkedList<>();
+        // LinkedList<Integer> n = new LinkedList<>();
         
+        // for (int i = 0; i < 20; i++) {
+        //     n.addFirst((int)(Math.random() * 10));
+        // }
+
+        // System.out.println(n);
+
+        // System.out.println(n.get(2));
+        // System.out.println(n.getFirst());
+        // System.out.println(n.getLast());
+
+        // n.removeFirst();
+        // n.removeLast();
+
+        Deque<Integer> n = new LinkedList<>();
+
+        n.offer(12);
+        n.offer(34);
+        n.offer(45);
+
+        System.out.println(n);
+
+        // System.out.println(n.poll());
+        // System.out.println(n.pollFirst());
+        // System.out.println(n.pollLast());
+
+        System.out.println(n.peek());
+        System.out.println(n.peekFirst());
+        System.out.println(n.peekLast());
+        
+
+        System.out.println(n);
     }
 }
 /*
