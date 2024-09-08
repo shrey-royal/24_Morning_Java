@@ -26,6 +26,39 @@ public class Hash_Map {
         map.put(20, "Hanuman");
 
         System.out.println(map);
+
+        // System.out.println("Size: " + map.size());
+        // System.out.println(map.get(17));
+        // map.clear();
+        // System.out.println(map.isEmpty());
+        // System.out.println(map.containsKey(125));
+        // System.out.println(map.containsValue("Shiva"));
+
+        //replace
+        // map.replace(1, "Rama");
+        // map.replace(1, "Rama", "Ramachandra");
+        // System.out.println(map);
+
+        // HashMap<Integer, String> map1 = new HashMap<>();
+        // map.put(111, "Car");
+        // map.put(222, "Bike");
+        // map.put(333, "Nothing");
+        // map.putAll(map1);
+
+        // System.out.println(map);
+
+        // System.out.println(map.keySet());
+        // System.out.println(map.values());
+        // System.out.println(map.entrySet());
+
+        // getOrDefault
+        // System.out.println(map.get(125));   //null
+        // System.out.println(map.getOrDefault(125, "Invalid Key"));
+        
+
+        // putIfAbsent
+        map.putIfAbsent(112, "Car & Bike");
+        System.out.println(map);
     }
 }
 /*
