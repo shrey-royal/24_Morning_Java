@@ -1,0 +1,50 @@
+TrainReservationSystem/
+│
+└── src/
+    └── com/
+   	    └── trainreservation/
+            ├── config/
+            │   └── DatabaseConnection.java
+            ├── model/
+            │   ├── Passenger.java
+            │   ├── Reservation.java
+            │   └── Train.java
+            ├── dao/
+            │   ├── PassengerDAO.java
+            │   ├── ReservationDAO.java
+            │   └── TrainDAO.java
+            ├── service/
+            │   ├── PassengerService.java
+            │   ├── ReservationService.java
+            │   └── TrainService.java
+            ├── ui/
+            │   └── Main.java
+            └── util/
+                └── InputUtil.java
+
+DB Table Queries:
+
+CREATE TABLE Trains (
+    train_number INT PRIMARY KEY,
+    name VARCHAR(50),
+    source VARCHAR(50),
+    destination VARCHAR(50),
+    total_seats INT,
+    departure_time TIME,
+    arrival_time TIME
+);
+
+CREATE TABLE Passengers (
+    passenger_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50),
+    age INT
+);
+
+CREATE TABLE Reservations (
+    reservation_id INT PRIMARY KEY AUTO_INCREMENT,
+    train_number INT,
+    passenger_id INT,
+    seat_number INT,
+    FOREIGN KEY (train_number) REFERENCES Trains(train_number),
+    FOREIGN KEY (passenger_id) REFERENCES Passengers(passenger_id)
+);

@@ -1,0 +1,38 @@
+JDBC Connection: Java 2 Database Connectivity
+
+Basic Operations to be performed in this part:
+
+1. Inserting data
+2. Getting/Retrieving all data / Retrieve User Specific Data
+3. Updating data
+4. Deleting data
+
+--------------------------------------------------------------------------------------------
+JDBC: Java To Database Connectivity
+
+using Jdbc we can connect to any database from java program. 
+
+Steps to connect to database from java program. 
+
+1. Load the driver class. (Act as bridge between java program and database)
+2. Create connection (connect to database)
+3. Create statement  (create sql query to execute)
+4. Execute query (execute/run sql query)
+5. Close connection (close connection to database)
+
+CheatSheet: 
+https://learnsql.com/blog/mysql-cheat-sheet/mysql-cheat-sheet-a4.pdf
+--------------------------------------------------------------------------------------------
+
+Table:
+
+CREATE TABLE SuratFood (
+    FoodID INT PRIMARY KEY AUTO_INCREMENT,
+    FoodName VARCHAR(100),
+    Description TEXT,
+    PopularImpressions TEXT,
+    Rating FLOAT CHECK (Rating >= 0 AND Rating <= 5)
+);
+
+
+
