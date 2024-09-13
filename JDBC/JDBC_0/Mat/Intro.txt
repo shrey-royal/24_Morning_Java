@@ -26,13 +26,40 @@ https://learnsql.com/blog/mysql-cheat-sheet/mysql-cheat-sheet-a4.pdf
 
 Table:
 
-CREATE TABLE SuratFood (
-    FoodID INT PRIMARY KEY AUTO_INCREMENT,
-    FoodName VARCHAR(100),
-    Description TEXT,
-    PopularImpressions TEXT,
-    Rating FLOAT CHECK (Rating >= 0 AND Rating <= 5)
+CREATE TABLE Events (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    event_name VARCHAR(255) NOT NULL,
+    event_date DATETIME NOT NULL,
+    location VARCHAR(255),
+    organizer_name VARCHAR(255) NOT NULL
 );
+
+Insert Query:
+
+INSERT INTO Events (event_name, event_date, location, organizer_name) VALUES 
+('Annual Tech Conference', '2024-10-15 09:00:00', 'Tech Hub Convention Center', 'Alice Johnson'),
+('Marketing Strategy Meeting', '2024-09-25 14:30:00', 'Downtown Office Room 305', 'Bob Smith'),
+('Team Building Workshop', '2024-11-05 10:00:00', 'City Park Pavilion', 'Carol Lee'),
+('Product Launch', '2024-12-01 18:00:00', 'Grand Ballroom, City Hotel', 'David Kim'),
+('Customer Feedback Session', '2024-10-10 11:00:00', 'Online - Zoom', 'Emma Stone'),
+('Quarterly Financial Review', '2024-09-30 09:00:00', 'Finance Office, 2nd Floor', 'Franklin Wells'),
+('Design Sprint', '2024-10-20 13:00:00', 'Design Studio, Building B', 'Grace Martin'),
+('AI Ethics Panel', '2024-11-12 15:00:00', 'Tech Hub Auditorium', 'Hannah Moore'),
+('HR Policies Update', '2024-09-28 10:00:00', 'Main Office Conference Room', 'Ian Thomas'),
+('Annual Charity Gala', '2024-12-10 19:00:00', 'The Grand Palace', 'Jessica Lee'),
+('Cybersecurity Workshop', '2024-11-18 09:00:00', 'IT Department, Room 204', 'Kevin Turner'),
+('Social Media Marketing Tips', '2024-10-22 14:00:00', 'Online Webinar', 'Laura Davis'),
+('Employee Appreciation Day', '2024-11-25 12:00:00', 'Main Hall', 'Mike Anderson'),
+('New Employee Orientation', '2024-10-01 08:30:00', 'HR Office', 'Natalie Edwards'),
+('Weekly Standup Meeting', '2024-09-20 09:00:00', 'Online - Google Meet', 'Oliver Scott'),
+('Sales Training', '2024-10-18 11:00:00', 'Sales Room, 4th Floor', 'Paul Mitchell'),
+('Christmas Party', '2024-12-20 18:30:00', 'Company Rooftop', 'Quincy Adams'),
+('Project Kickoff', '2024-09-22 10:00:00', 'Main Office Board Room', 'Rachel Green'),
+('Data Analytics Seminar', '2024-11-10 13:00:00', 'Online - MS Teams', 'Sophia Brown'),
+('Environmental Awareness Campaign', '2024-10-05 09:00:00', 'Community Center', 'Tyler White');
+
+
+
 
 
 
