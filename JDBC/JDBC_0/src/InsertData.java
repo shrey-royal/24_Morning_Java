@@ -1,18 +1,30 @@
 import java.sql.Connection;
-import java.sql.Statement;
+import java.sql.PreparedStatement;
+import java.util.Scanner;
 
 public class InsertData {
 
 	public static void main(String[] args) {
 		Connection conn = null;
-		Statement stmt = null;
-		String sql = "INSERT INTO Event (event_name, event_date, location, organizer_name) VALUES ('Annual Employee Awards Ceremony', '2024-12-15 17:00:00', 'The Grand Ballroom, City Hotel', 'Victoria Harris');";
+		PreparedStatement pstmt = null;
+		Scanner sc = null;
+		String sql = "INSERT INTO Events (event_name, event_date, location, organizer_name) VALUES (?, ?, ?, ?)";
 		
 		try {
 			conn = DBConn.getConnection();
-			stmt = conn.createStatement();
+			pstmt = conn.prepareStatement(sql);
+			sc = new Scanner(System.in);
 			
-			int ra = stmt.executeUpdate(sql);
+			System.out.print("Enter event name: ");
+			pstmt.setString(1, sc.nextLine());
+			System.out.print("Enter event datetime (DDDD-MM-YY HH:MM:SS): ");
+			pstmt.setString(2, sc.nextLine());
+			System.out.print("Enter event location: ");
+			pstmt.setString(3, sc.nextLine());
+			System.out.print("Enter event organizer name: ");
+			pstmt.setString(4, sc.nextLine());
+			
+			int ra = pstmt.executeUpdate();
 			
 			if (ra == 1) {
 				System.out.println("Event registered successfully.");
@@ -24,8 +36,9 @@ public class InsertData {
 			e.printStackTrace();
 		} finally {
 			try {
+				if (sc != null) sc.close();
+				if (pstmt != null) pstmt.close();
 				if (conn != null) conn.close();
-				if (stmt != null) stmt.close();
 			} catch (Exception e) {
 				System.out.println("Error Closing Connections...");
 			}
