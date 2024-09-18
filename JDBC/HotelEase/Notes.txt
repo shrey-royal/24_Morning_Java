@@ -1,0 +1,32 @@
+/HotelEase
+│
+├── /src
+│   ├── /model         // Contains the data models (POJOs) representing tables like User, Hotel, Room, etc.
+│   │   ├── User.java
+│   │   ├── Hotel.java
+│   │   ├── Room.java
+│   │   ├── Booking.java
+│   │   └── Payment.java
+│   │
+│   ├── /dao           // Contains Data Access Object (DAO) classes to interact with the database
+│   │   ├── UserDAO.java
+│   │   ├── HotelDAO.java
+│   │   ├── RoomDAO.java
+│   │   ├── BookingDAO.java
+│   │   └── PaymentDAO.java
+│   │
+│   ├── /controller    // Contains the controller classes responsible for handling the application logic
+│   │   ├── AdminController.java
+│   │   ├── UserController.java
+│   │   └── BookingController.java
+│   │
+│   ├── /util          // Contains utility classes for managing database connection and other helpers
+│   │   ├── DBConnection.java
+│   │   └── InputValidator.java
+│   │
+│   └── Main.java      // Main method (entry point of the application) with the command-line UI
+│
+├── /lib               // External libraries (like JDBC drivers) if necessary
+│   └── mysql-connector-java-8.0.27.jar
+│
+└── README.md          // Project documentation (optional)
