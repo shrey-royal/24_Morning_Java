@@ -34,4 +34,29 @@ public class InputValidator {
 			return false;
 		}
 	}
+	
+	public static boolean isValidDateRange(String startDateStr, String endDateStr) {
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        try {
+            LocalDate startDate = LocalDate.parse(startDateStr, dateFormatter);
+            LocalDate endDate = LocalDate.parse(endDateStr, dateFormatter);
+            return !startDate.isAfter(endDate);
+        } catch (DateTimeParseException e) {
+            return false;
+        }
+    }
+
+    public static boolean isNonEmptyString(String input) {
+        return input != null && !input.trim().isEmpty();
+    }
+
+    public static boolean isPositiveNumber(double number) {
+        return number > 0;
+    }
+
+    public static boolean isValidUsername(String username) {
+        String usernameRegex = "^[a-zA-Z0-9_]{3,20}$";
+        Pattern pattern = Pattern.compile(usernameRegex);
+        return pattern.matcher(username).matches();
+    }
 }
