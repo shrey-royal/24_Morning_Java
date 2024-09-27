@@ -2,7 +2,6 @@ package controller;
 
 import dao.UserDao;
 import model.User;
-import util.InputValidator;
 
 public class UserController {
 	private UserDao userDao;
@@ -12,18 +11,7 @@ public class UserController {
 	}
 	
 	public String registerUser(String username, String password, String email, String phoneNumber) {
-		if (!InputValidator.isValidUsername(username)) {
-			return "Invalid username. Username should be alphanumeric and 3-20 characters long.";
-		}
 		
-		if (!InputValidator.isValidEmail(email)) {
-            return "Invalid email format.";
-        }
-        
-		if (!InputValidator.isValidPhoneNumber(phoneNumber)) {
-            return "Invalid phone number format.";
-        }
-        
         User user = new User(username, password, email, phoneNumber);
         
         boolean result = userDao.addUser(user);
@@ -39,13 +27,6 @@ public class UserController {
 	}
 	
 	public String updateUserProfile(int userId, String newPassword, String newEmail, String newPhoneNumber) {
-		if (!InputValidator.isValidEmail(newEmail)) {
-            return "Invalid email format.";
-        }
-        
-		if (!InputValidator.isValidPhoneNumber(newPhoneNumber)) {
-            return "Invalid phone number format.";
-        }
 		
 		User user = new User(userId, null, newPassword, newEmail, newPhoneNumber);
 		boolean result = userDao.updateUser(user);

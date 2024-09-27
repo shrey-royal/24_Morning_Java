@@ -72,7 +72,7 @@ public class UserDao {
 	}
 	
 	public boolean updateUser(User user) {
-		String sql = "UPDATE user SET password = ?, email = ?, phone_number = ? WHERE id = ?";
+		String sql = "UPDATE users SET password = ?, email = ?, phone_number = ? WHERE id = ?";
 		try {
 			pstmt = DBConnection.getConnection().prepareStatement(sql);
 			pstmt.setString(1, user.getPassword());
