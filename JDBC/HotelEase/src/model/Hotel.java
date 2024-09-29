@@ -6,6 +6,19 @@ public class Hotel {
 	private String location;
 	private String description;
 	
+	public Hotel(int id, String name, String location, String description) {
+		this.id = id;
+		this.name = name;
+		this.location = location;
+		this.description = description;
+	}
+
+	public Hotel(String name, String location, String description) {
+		this.name = name;
+		this.location = location;
+		this.description  = description;
+	}
+
 	public int getId() {
 		return id;
 	}
