@@ -1,11 +1,19 @@
 package ui;
+import java.util.ArrayList;
 import java.util.Scanner;
 
+import controller.BookingController;
+import controller.HotelController;
 import controller.UserController;
+import model.Booking;
+import model.Hotel;
 
 public class UserMain {
 	private static Scanner sc = new Scanner(System.in);
 	private static UserController userController = new UserController();
+	private static HotelController hotelController = new HotelController();
+	private static BookingController bookingController = new BookingController();
+	private static String uName = null;
 	
 	public static void userMenu() {
 		boolean exit = false;
@@ -77,11 +85,13 @@ public class UserMain {
 		String password = sc.next();
 		
 		if (userController.loginUser(username, password)) {
+			uName = username;
 			while(!exit) {
 				System.out.println("\nWelcome " + username + ",\n");
 				System.out.println("1. Update Profile");
 				System.out.println("2. Delete Profile");
-				System.out.println("x: More coming soon!");
+				System.out.println("3. Book Hotel");
+				System.out.println("4. View your bookings");
 				System.out.println("0. Exit");
 				System.out.println("\nPlease choose an option: ");
 				choice = sc.nextInt();
@@ -93,6 +103,15 @@ public class UserMain {
 					
 				case 2:
 					deleteAccount();
+					break;
+					
+				case 3:
+					viewAllHotels();
+					bookHotel();
+					break;
+					
+				case 4:
+					viewBookings();
 					break;
 					
 				case 0:
@@ -135,5 +154,47 @@ public class UserMain {
 		
 		String result = userController.deleteUserAccount(userId);
 		System.out.println(result);
+	}
+	
+	private static void viewAllHotels() {
+        ArrayList<Hotel> hotels = hotelController.getAllHotels();
+        if (hotels.isEmpty()) {
+            System.out.println("No hotels available.");
+        } else {
+            System.out.println("Hotels List:");
+            for (Hotel hotel : hotels) {
+                System.out.println("ID: " + hotel.getId() + " | Name: " + hotel.getName() + " | Location: " + hotel.getLocation());
+            }
+        }
+    }
+	
+	private static void bookHotel() {		
+		System.out.print("Enter hotel ID: ");
+        int hotelId = sc.nextInt();
+        
+        System.out.print("Enter start date (yyyy-mm-dd): ");
+        String startDate = sc.next();
+        
+        System.out.print("Enter end date (yyyy-mm-dd): ");
+        String endDate = sc.next();
+
+        boolean success = bookingController.bookHotel(userController.getUserId(uName), hotelId, startDate, endDate, "WAITING");
+        if (success) {
+            System.out.println("Booking successful!");
+        } else {
+            System.out.println("Booking failed.");
+        }
+	}
+	
+	private static void viewBookings() {
+		System.out.println("Your Bookings:");
+        ArrayList<Booking> bookings = bookingController.viewUserBookings(userController.getUserId(uName));
+        for (Booking booking : bookings) {
+        	System.out.println("Booking ID: " + booking.getId() + 
+                    ", Hotel ID: " + booking.getHotel_id() + 
+                    ", Start Date: " + booking.getStartDate() + 
+                    ", End Date: " + booking.getEndDate() + 
+                    ", Status: " + booking.getBooking_status());
+		}
 	}
 }

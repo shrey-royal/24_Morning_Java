@@ -26,6 +26,10 @@ public class UserController {
 		return userDao.validateUser(username, password);
 	}
 	
+	public int getUserId(String username) {
+		return userDao.getUserByUsername(username).getId();
+	}
+	
 	public String updateUserProfile(int userId, String newPassword, String newEmail, String newPhoneNumber) {
 		
 		User user = new User(userId, null, newPassword, newEmail, newPhoneNumber);
